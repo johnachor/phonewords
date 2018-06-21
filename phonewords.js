@@ -14,7 +14,7 @@ const getPossibleLetters = (numberChar) => {
   return keypadLayout[numberChar];
 };
 
-// expects an integer (or string representing an integer) containing no 1s or 0s
+// expects an integer (or string representing an integer)
 const getWordMap = (intInput) => {
   if (typeof intInput === "number") intInput = intInput.toString();
   return intInput.split('').map(getPossibleLetters);
