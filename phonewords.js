@@ -1,5 +1,6 @@
 const getPossibleLetters = (numberChar) => {
   const keypadLayout = {
+    "1": ["1"],
     "2": ["A", "B", "C"],
     "3": ["D", "E", "F"],
     "4": ["G", "H", "I"],
@@ -8,6 +9,7 @@ const getPossibleLetters = (numberChar) => {
     "7": ["P", "Q", "R", "S"],
     "8": ["T", "U", "V"],
     "9": ["W", "X", "Y", "Z"],
+    "0": ["0"]
   };
   return keypadLayout[numberChar];
 };
@@ -19,7 +21,7 @@ const getWordMap = (intInput) => {
 };
 
 const getPermutations = (wordMap, prefix) => {
-  prefix = prefix || '';
+  if (!prefix) prefix = '';
   if (!wordMap.length) return prefix;
 
   return wordMap[0].reduce((result, value) => {
